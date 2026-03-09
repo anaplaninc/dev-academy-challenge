@@ -16,6 +16,8 @@ If you would like to create a solution in HTML, CSS and Javascript we have provi
 ### Programming languages
 You are welcome to provide a solution to this challenge in any programming language of your preference. We'd recommend the one you feel most comfortable with.
 
+You may use online documentation and search tools (e.g., Google, Stack Overflow). However, the use of generative AI tools or AI coding assistants (such as ChatGPT, Copilot, or similar tools) is not permitted during this exercise. 
+
 ## Sumbission
 Please push your changes to your branch on our remote repository. Again, if you need help with this, please do ask.
 
