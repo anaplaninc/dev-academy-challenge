@@ -1,29 +1,73 @@
-# Dice Game Challenge
-Welcome to our challenge to create a 2 player dice game
+# 2 Player Dice Game Built with React + TypeScript + Vite
 
-## Getting started
-You can find all the rules of the game and what we expect in the [project brief](project-brief.md)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-We recommend checking out the branch we have already created for you in the format "firstname-surname". Write your code locally in that branch and then push it to our remote in that same branch. 
-If you need any help with this, please ask.
+Currently, two official plugins are available:
 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### Dice images
-If you would like to use them, we have provided some images of each dice number in the [assets](assets) folder. You do not have to use these though.
+## React Compiler
 
-### Starter code for HTML/CSS/Javascript solution
-If you would like to create a solution in HTML, CSS and Javascript we have provided some code to help you get started in the [javascript-starter-code](javascript-starter-code) folder. This will give you a basic UI with all the elements you'll need. You'd just need to add the functionality. You are welcome to amend the HTML and CSS if you wish or use them as is and just add code in Javascript.
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### Programming languages
-You are welcome to provide a solution to this challenge in any programming language of your preference. We'd recommend the one you feel most comfortable with.
+## Expanding the ESLint configuration
 
-You may use online documentation and search tools (e.g., Google, Stack Overflow). However, the use of generative AI tools or AI coding assistants (such as ChatGPT, Copilot, Cursor or similar tools) is not permitted during this exercise. 
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Submission
-Please push your changes to your branch on our remote repository. Again, if you need help with this, please do ask.
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-Tip: We suggest pushing your changes regularly so that we can easily see your thought processes and how you have developed and adjusted the code over time. Remember your commit messages can also really help us with this.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-Remember we’re not looking for a perfect or “fancy” solution. We just want to see how you handle this challenge and what you can produce in the time alloted.
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-If there's anything at all you need help with, please do ask. We don't expect you to know everything.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
