@@ -1,0 +1,29 @@
+my thought process / notes:
+
+- should have a player class
+    variables:
+        - name
+        - total
+        - curr
+
+    methods:
+        - hold() #should add to the total and reset curr
+        - reset_curr() #reset curr
+
+
+how will i handle the switch?
+    - using a bool 0/1
+
+edge cases:
+    what if the user enters in wrong?
+        - show them a warning
+        - have different name for commands
+            - "q" / "quit" / "exit"
+            - "r" / "roll" / "hold"
+
+
+while true - so it keeps going till the
+condition or the game becomes invalid (score >= 100)
+
+
+
