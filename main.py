@@ -67,14 +67,16 @@ def game_loop():
                 if choice == "h":
                     print(f"Player {player} holds. Ending turn.")
                     list_of_players[player] += dice_value
+                    player = (player + 1) % len(list_of_players)
                     break
                 # roll again
                 elif choice == "r":
                     continue
                 else:
                     print("Invalid choice. Please enter 'r' or 'h'.")
-
-        pass
+        if is_game_over():
+            print("Game over!")
+            break
 
 
 if __name__ == "__main__":
