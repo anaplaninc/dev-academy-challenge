@@ -48,11 +48,23 @@ function roll() {
   //Check if we have 'rolled' a 1
   if (randomNum === 1) {
     game.currentScore = 0; //Reset the current score to 0
-    //TODO: Switch Player
+    switchPlayer();
   } else {
     game.currentScore += randomNum; //Add our randomNum to the currentTotal
   }
   updateScoresUI();
+}
+
+//Will switch the current player to the next player
+function switchPlayer() {
+  console.log(`Player switched from ${game.currentPlayer}`);
+  //If the currentPlayer index is 0, change it to 1, else change to 0
+  if (game.currentPlayer === 0) {
+    game.currentPlayer = 1;
+  } else {
+    game.currentPlayer = 0;
+  }
+  console.log(`to ${game.currentPlayer}`);
 }
 
 //UI Update Functions
