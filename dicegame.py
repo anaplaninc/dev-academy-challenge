@@ -37,7 +37,11 @@ while score1 < 100 and score2 < 100:
     score2 += roll2
     print(f"{User2}'s current score: {score2}")
 
-    
+    #Checking if player 2 rolled a 1, if so they lose any unheld score and the next player's turn begins
+    if roll2 == 1:
+        print(f"{User2} rolled a 1 and loses any unheld score from this turn. Next player's turn.")
+        score2 -= roll2
+        continue
 
     if score2 >= 100:
         print(f"Congratulations {User2}! You win with a score of {score2}!")
