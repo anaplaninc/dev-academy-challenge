@@ -12,8 +12,7 @@ Switch Player - Switch the the other player
 
 # UI Updates
 Update Dice
-Update Current Score
-Update Total Score
+Update UI - We can update both the player's total score and the game's current score together.
 Update Player Name/s
 
 # UI Interactions/Event Listeners

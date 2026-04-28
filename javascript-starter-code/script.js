@@ -43,18 +43,22 @@ function roll() {
 
   //Get our random number between 1-6
   const randomNum = Math.ceil(Math.random() * 6);
-  //TODO: Update the Dice image to reflect the rolled number
+  updateDiceImage(randomNum);
 
   //Check if we have 'rolled' a 1
   if (randomNum === 1) {
     game.currentScore = 0; //Reset the current score to 0
-    //TODO: Update the UI to reflec the current score
     //TODO: Switch Player
   } else {
     game.currentScore += randomNum;
   }
-
+  //Update currentScore here
   console.log(game.currentScore);
+}
+
+//UI Update Functions
+function updateDiceImage(num) {
+  diceElement.src = `../assets/dice-${num}.png`;
 }
 
 //UI Interaction/Event Listeners
