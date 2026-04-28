@@ -103,8 +103,10 @@ function resetGame() {
 function updateScoresUI() {
   if (game.currentPlayer === 0) {
     currentScore0Element.textContent = game.currentScore;
+    currentScore1Element.textContent = 0;
   } else {
     currentScore1Element.textContent = game.currentScore;
+    currentScore0Element.textContent = 0;
   }
 
   //Update the player's totals displayed
