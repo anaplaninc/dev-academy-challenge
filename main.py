@@ -1,11 +1,10 @@
-def update_score(value):
-    # Score update logic goes here
-    pass
+import random
 
 
-def roll_dice():
-    # Dice rolling logic goes here
-    pass
+def roll_dice() -> int:
+    dice_value: int = 0
+    dice_value = random.randint(1, 6)
+    return dice_value
 
 
 def is_game_over():
@@ -37,14 +36,44 @@ def initialize_game():
     return dict_of_players
 
 
+def play_turn(player: int):
+    print(f"Player {player}'s turn.")
+    input("Press Enter to roll the dice...")
+    dice_value: int = roll_dice()
+    print(f"Player {player} rolled a {dice_value}.")
+
+
 def game_loop():
     list_of_players: dict = {}
 
     list_of_players = initialize_game()
-
-    print(f"Players: {list_of_players}")
+    player: int = 0
     while True:
-        # Game logic goes here
+        print(f"Player {player}'s turn.")
+        while True:
+            input("Press Enter to roll the dice...")
+            dice_value: int = roll_dice()
+            print(f"Player {player} rolled a {dice_value}.")
+            if dice_value == 1:
+                print("You rolled a 1! Your turn is over.")
+                player = (player + 1) % len(list_of_players)
+                return player
+            else:
+                print(
+                    "You rolled a number other than 1! You can choose to roll again or hold."
+                )
+                choice: str = input("Enter 'r' to roll again or 'h' to hold: ").lower()
+                # hold
+                if choice == "h":
+                    print(f"Player {player} holds. Ending turn.")
+                    list_of_players[player] += dice_value
+                    break
+                # roll again
+                elif choice == "r":
+                    continue
+                else:
+                    print("Invalid choice. Please enter 'r' or 'h'.")
+
         pass
 
 
