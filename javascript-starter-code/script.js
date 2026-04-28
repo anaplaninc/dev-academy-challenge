@@ -121,4 +121,11 @@ function updateDiceImage(num) {
 rollBtn.addEventListener('click', roll); //Assign our roll function to the roll button
 holdBtn.addEventListener('click', hold);
 resetBtn.addEventListener('click', resetGame);
-
+player0Element.addEventListener(
+  'input',
+  e => (game.players[0].name = e.target.value),
+);
+player1Element.addEventListener(
+  'input',
+  e => (game.players[1].name = e.target.value),
+);
