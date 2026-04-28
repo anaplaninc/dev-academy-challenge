@@ -42,7 +42,7 @@ public class DiceGameFlow()
             {
                 Console.WriteLine("you rolled a 1, tyou lose all unheld scores and your turn ends.");
                 currentTurnScore = 0;
-                currentPlayer = currentPlayer == player1? player2: player1;
+                currentPlayer = SwitchPlayer();
                 continue;
             }
 
@@ -66,7 +66,7 @@ public class DiceGameFlow()
                     break;
                 }
 
-                currentPlayer = currentPlayer == player1? player2: player1;
+                currentPlayer = SwitchPlayer();
                 continue;
             }
 
@@ -81,6 +81,11 @@ public class DiceGameFlow()
     private bool CheckWon(Player currentPlayer)
     {
         return currentPlayer.Score >= 100;
+    }
+
+    private Player SwitchPlayer()
+    {
+        return currentPlayer == player1? player2: player1;
     }
     
 }
