@@ -73,10 +73,19 @@ function hold() {
 
   //TODO: Check if the player has got or exceeded 100 points
   //If so the game is over and the winner can be displayed
+  if (game.players[game.currentPlayer].total >= 100) {
+    game.isGameOver = true;
+    console.log('Winner is ' + game.players[game.currentPlayer].name);
+  } else {
+    game.currentScore = 0;
+    switchPlayer(); //If not, switch to the next player, reset the current score to 0
+  }
 
-  //If not, switch to the next player, reset the current score to 0
+  updateScoresUI(); //We also need to update the scoreUI to display the new scores
+}
 
-  //We also need to update the scoreUI to display the new scores
+function resetGame(){
+    
 }
 
 //UI Update Functions
@@ -101,3 +110,4 @@ function updateDiceImage(num) {
 
 //UI Interaction/Event Listeners
 rollBtn.addEventListener('click', roll); //Assign our roll function to the roll button
+holdBtn.addEventListener('click', hold);
