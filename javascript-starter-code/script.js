@@ -50,16 +50,18 @@ function roll() {
     game.currentScore = 0; //Reset the current score to 0
     //TODO: Switch Player
   } else {
-    game.currentScore += randomNum;
+    game.currentScore += randomNum; //Add our randomNum to the currentTotal
   }
   //Update currentScore here
   console.log(game.currentScore);
 }
 
 //UI Update Functions
+
+//Update the dice elements src using the randomNumber we recieve in the roll function
 function updateDiceImage(num) {
   diceElement.src = `../assets/dice-${num}.png`;
 }
 
 //UI Interaction/Event Listeners
-rollBtn.addEventListener('click', roll);
+rollBtn.addEventListener('click', roll); //Assign our roll function to the roll button
