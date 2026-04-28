@@ -1,0 +1,15 @@
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/bin/Debug/net10.0/Dice Game
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/bin/Debug/net10.0/Dice Game.deps.json
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/bin/Debug/net10.0/Dice Game.runtimeconfig.json
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/bin/Debug/net10.0/Dice Game.dll
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/bin/Debug/net10.0/Dice Game.pdb
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.GeneratedMSBuildEditorConfig.editorconfig
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.AssemblyInfoInputs.cache
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.AssemblyInfo.cs
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.csproj.CoreCompileInputs.cache
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.sourcelink.json
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.dll
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/refint/Dice Game.dll
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.pdb
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/Dice Game.genruntimeconfig.cache
+/Users/depesh.pitamber/Allen-dev-academy/dev-academy-challenge/Dice Game/obj/Debug/net10.0/ref/Dice Game.dll
