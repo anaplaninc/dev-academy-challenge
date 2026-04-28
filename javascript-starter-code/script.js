@@ -57,12 +57,17 @@ function roll() {
 
 //UI Update Functions
 
+//Update to scores to reflect both the current score for the active player, and also the player's total scores
 function updateScoresUI() {
   if (game.currentPlayer === 0) {
     currentScore0Element.textContent = game.currentScore;
   } else {
     currentScore1Element.textContent = game.currentScore;
   }
+
+  //Update the player's totals displayed
+  score0Element.textContent = game.players[0].total;
+  score1Element.textContent = game.players[1].total;
 }
 
 //Update the dice elements src using the randomNumber we recieve in the roll function
