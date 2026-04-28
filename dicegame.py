@@ -24,4 +24,14 @@ while score1 < 100 and score2 < 100:
     if score1 >= 100:
         print(f"Congratulations {User1}! You win with a score of {score1}!")
         break 
-    
+
+#user2's turn to roll the dice and update score  
+    input(f"{User2}, press Enter to roll the dice.")
+    roll2 = random.randint(1, 6)
+    print(f"{User2} rolled a {roll2}.")
+    score2 += roll2
+    print(f"{User2}'s current score: {score2}")
+
+    if score2 >= 100:
+        print(f"Congratulations {User2}! You win with a score of {score2}!")
+        break
