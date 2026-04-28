@@ -69,6 +69,8 @@ function switchPlayer() {
 
 //Hold function that adds the current score to the current players total
 function hold() {
+  if (game.isGameOver) return; //If the game is over, then do nothing
+
   game.players[game.currentPlayer].total += game.currentScore; //Add the current score to the current players total
 
   //TODO: Check if the player has got or exceeded 100 points
@@ -84,8 +86,15 @@ function hold() {
   updateScoresUI(); //We also need to update the scoreUI to display the new scores
 }
 
-function resetGame(){
-    
+function resetGame() {
+  game.isGameOver = false;
+  game.currentPlayer = 0;
+  game.currentScore = 0;
+
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  currentScore0Element.textContent = 0;
+  currentScore1Element.textContent = 0;
 }
 
 //UI Update Functions
@@ -111,3 +120,5 @@ function updateDiceImage(num) {
 //UI Interaction/Event Listeners
 rollBtn.addEventListener('click', roll); //Assign our roll function to the roll button
 holdBtn.addEventListener('click', hold);
+resetBtn.addEventListener('click', resetGame);
+
