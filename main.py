@@ -7,9 +7,13 @@ def roll_dice() -> int:
     return dice_value
 
 
-def is_game_over():
+def is_game_over(players: dict) -> bool:
     # Game over condition logic goes here
-    pass
+    for player, score in players.items():
+        if score >= 100:
+            print(f"Player {player} wins with a score of {score}!")
+            return True
+    return False
 
 
 def create_players(amount: int) -> dict:
@@ -48,16 +52,17 @@ def game_loop():
 
     list_of_players = initialize_game()
     player: int = 0
+
     while True:
-        print(f"Player {player}'s turn.")
         while True:
+            print(f"Player {player+1}'s turn.")
             input("Press Enter to roll the dice...")
             dice_value: int = roll_dice()
-            print(f"Player {player} rolled a {dice_value}.")
+            print(f"Player {player+1} rolled a {dice_value}.")
             if dice_value == 1:
                 print("You rolled a 1! Your turn is over.")
                 player = (player + 1) % len(list_of_players)
-                return player
+                pass
             else:
                 print(
                     "You rolled a number other than 1! You can choose to roll again or hold."
@@ -68,15 +73,16 @@ def game_loop():
                     print(f"Player {player} holds. Ending turn.")
                     list_of_players[player] += dice_value
                     player = (player + 1) % len(list_of_players)
-                    break
+                    pass
                 # roll again
                 elif choice == "r":
                     continue
                 else:
                     print("Invalid choice. Please enter 'r' or 'h'.")
-        if is_game_over():
+
+        if is_game_over(list_of_players):
             print("Game over!")
-            break
+            quit()
 
 
 if __name__ == "__main__":
