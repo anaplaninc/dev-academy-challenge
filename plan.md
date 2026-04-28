@@ -18,6 +18,8 @@ CheckWinner - Check to see if a player has a score of 100 or over
 Update Dice
 Update UI - We can update both the player's total score and the game's current score together.
 Update Player Name/s
+Display Winner - Show the winner of the game
+Show Active Player - Show the active/current player
 
 # UI Interactions/Event Listeners
 
