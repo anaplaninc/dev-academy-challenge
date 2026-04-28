@@ -59,7 +59,7 @@ public class DiceGameFlow()
             if (choice == "2")
             {
                 currentPlayer.Score += currentTurnScore;
-                if (currentPlayer.Score >= 100)
+                if (CheckWon)
                 {
                     Console.WriteLine($"{currentPlayer.Name} win the game");
                     gameOver = true;
@@ -76,6 +76,11 @@ public class DiceGameFlow()
             }
         }
        
+    }
+
+    private bool CheckWon(Player currentPlayer)
+    {
+        return currentPlayer.Score >= 100;
     }
     
 }
