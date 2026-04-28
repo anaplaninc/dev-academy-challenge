@@ -13,6 +13,16 @@ public class DiceGameFlow()
        Console.WriteLine("please enter second player name:");
        string player2Name = Console.ReadLine();
 
+       if (String.IsNullOrEmpty(player1Name))
+        {
+            player1Name = "Player 1";
+        }
+
+        if (String.IsNullOrEmpty(player2Name))
+        {
+            player1Name = "Player 2";
+        }
+
        Player player1 = new Player(player1Name);
        Player player2 = new Player(player2Name);
        Player currentPlayer = player1;
