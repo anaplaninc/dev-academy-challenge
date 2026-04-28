@@ -52,11 +52,18 @@ function roll() {
   } else {
     game.currentScore += randomNum; //Add our randomNum to the currentTotal
   }
-  //Update currentScore here
-  console.log(game.currentScore);
+  updateScoresUI();
 }
 
 //UI Update Functions
+
+function updateScoresUI() {
+  if (game.currentPlayer === 0) {
+    currentScore0Element.textContent = game.currentScore;
+  } else {
+    currentScore1Element.textContent = game.currentScore;
+  }
+}
 
 //Update the dice elements src using the randomNumber we recieve in the roll function
 function updateDiceImage(num) {
