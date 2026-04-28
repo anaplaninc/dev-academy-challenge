@@ -36,7 +36,10 @@ public class DiceGameFlow()
                 continue;
             }
 
+            Console.WriteLine($"You rolled a {rollScore}");
+
             currentTurnScore += rollScore;
+            Console.WriteLine($"Your current unheld score is: {currentTurnScore}");
 
             Console.WriteLine("Choose your option below:");
             Console.WriteLine("1: continue turn");
@@ -49,11 +52,17 @@ public class DiceGameFlow()
                 if (currentPlayer.Score >= 100)
                 {
                     Console.WriteLine($"{currentPlayer.Name} win the game");
+                    gameOver = true;
                     break;
                 }
 
                 currentPlayer = currentPlayer == player1? player2: player1;
                 continue;
+            }
+
+            else if (choice != "1")
+            {
+                Console.WriteLine("Invalid input, as result, your turn continues");
             }
         }
        

@@ -1,3 +1,4 @@
 ﻿using DiceGame;
 
-Console.WriteLine(Dice.RollDice());
+DiceGameFlow diceGame = new DiceGameFlow();
+diceGame.Play();
