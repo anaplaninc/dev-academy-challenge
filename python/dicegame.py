@@ -38,7 +38,8 @@ def __Main__():
             print(f"2. Roll again if you roll a 1 you will loose all points for this round.")
             userinput = input("Please select on of the above options: ")
             if userinput ==1:
-                 turns[f"{playernumber}"]+=score
+                 turns[f"{playernumber}"] = turns[f"{playernumber}"]+score
+                 turns.update(f"{playernumber}": turns[f"{playernumber}"]+score)
                  playernumber = switch_player(playernumber)
                  print(f"test: {playernumber}")
                  continue
