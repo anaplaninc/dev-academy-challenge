@@ -27,6 +27,8 @@ public class Player {
 
         // Show to user
 
+        // TODO: include 1 logic
+
         // We will put a scanner here for now (unsure)
         Scanner scan = new Scanner(System.in);
         String roll_str = "Rolled a %d. What action would you like to take? (H / D)";
