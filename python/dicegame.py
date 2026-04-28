@@ -39,7 +39,7 @@ def __Main__():
             userinput = input("Please select on of the above options: ")
             if userinput ==1:
                  turns[f"{playernumber}"] = turns[f"{playernumber}"]+score
-                 turns.update(f"{playernumber}": turns[f"{playernumber}"]+score)
+                 turns.update(f"{playernumber}", turns[f"{playernumber}"]+score)
                  playernumber = switch_player(playernumber)
                  print(f"test: {playernumber}")
                  continue
