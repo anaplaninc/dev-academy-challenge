@@ -53,7 +53,7 @@ public class Game {
 				int rollValue = rollDice();
 				
 				if (rollValue == 1) {
-					unhelds[playerTurn-1] = 0;
+					unhelds[playerTurn-1] = 0;  
 					playerTurn = switchTurn(playerTurn);
 					System.out.println("You rolled a 1! switching to p" + playerTurn + ": " + names[playerTurn - 1]);
 					System.out.println("p1: " + names[0] + " score = " + scores[0]);
