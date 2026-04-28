@@ -12,3 +12,16 @@ User2 = input("Player 2, please enter your name: ")
 #Initializing scores for both players
 score1 = 0
 score2 = 0
+
+#Main game loop continues until one of the players reaches 100 or more points
+while score1 < 100 and score2 < 100:
+    input(f"{User1}, press Enter to roll the dice.")
+    roll1 = random.randint(1, 6)
+    print(f"{User1} rolled a {roll1}.")
+    score1 += roll1
+    print(f"{User1}'s current score: {score1}")
+
+    if score1 >= 100:
+        print(f"Congratulations {User1}! You win with a score of {score1}!")
+        break 
+    
