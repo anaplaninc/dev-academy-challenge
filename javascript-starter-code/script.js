@@ -12,18 +12,20 @@ const player0NameElement = document.getElementById('name--0');
 const player1NameElement = document.getElementById('name--1');
 
 //Buttons
-const rollBtn = document.getElementById('btn--roll');
-const holdBtn = document.getElementById('btn--hold');
-const resetBtn = document.getElementById('btn--new');
+const rollBtn = document.querySelector('.btn--roll');
+const holdBtn = document.querySelector('.btn--hold');
+const resetBtn = document.querySelector('.btn--new');
 
 // Starting conditions
 score0Element.textContent = 0;
 score1Element.textContent = 0;
 
 //Game Config/Variables
+
 //Stored inside an object so we can access all required game variables using game.(variable name)
 const game = {
-  players: [ //Tracks our players, using an array would potentially allow for additional players to be added
+  players: [
+    //Tracks our players, using an array would potentially allow for additional players to be added
     { name: 'Player 2', total: 0 },
     { name: 'Player 2', total: 0 },
   ],
@@ -31,3 +33,29 @@ const game = {
   currentPlayer: 0, //Tracks the index of the current player, which we can use in the 'players' array
   isGameOver: false, //Tracks whether the game is over e.g. has someone won
 };
+
+//Game Logic Functions
+
+//Roll function, gives us a random number between 1-6, if 1 switches player and resets current score
+//If not a 1, then add the current score and allow user to roll again
+function roll() {
+  if (game.isGameOver) return; //First we check if the game is finished, if yes, then we don't do anything
+
+  //Get our random number between 1-6
+  const randomNum = Math.ceil(Math.random() * 6);
+  //TODO: Update the Dice image to reflect the rolled number
+
+  //Check if we have 'rolled' a 1
+  if (randomNum === 1) {
+    game.currentScore = 0; //Reset the current score to 0
+    //TODO: Update the UI to reflec the current score
+    //TODO: Switch Player
+  } else {
+    game.currentScore += randomNum;
+  }
+
+  console.log(game.currentScore);
+}
+
+//UI Interaction/Event Listeners
+rollBtn.addEventListener('click', roll);
