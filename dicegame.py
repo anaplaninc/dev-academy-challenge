@@ -8,3 +8,7 @@ print("Welcome to the Dice Game! First to reach 100 or more points wins. There a
 #Creating variables to store player names and scores
 User1 = input("Player 1, please enter your name: ")
 User2 = input("Player 2, please enter your name: ")
+
+#Initializing scores for both players
+score1 = 0
+score2 = 0
