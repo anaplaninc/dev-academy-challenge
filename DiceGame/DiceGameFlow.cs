@@ -35,6 +35,26 @@ public class DiceGameFlow()
                 currentPlayer = currentPlayer == player1? player2: player1;
                 continue;
             }
+
+            currentTurnScore += rollScore;
+
+            Console.WriteLine("Choose your option below:");
+            Console.WriteLine("1: continue turn");
+            Console.WriteLine("2: add unheld score to total score and end turn.");
+            string choice = Console.ReadLine();
+
+            if (choice == "2")
+            {
+                currentPlayer.Score += currentTurnScore;
+                if (currentPlayer.Score >= 100)
+                {
+                    Console.WriteLine($"{currentPlayer.Name} win the game");
+                    break;
+                }
+
+                currentPlayer = currentPlayer == player1? player2: player1;
+                continue;
+            }
         }
        
     }
