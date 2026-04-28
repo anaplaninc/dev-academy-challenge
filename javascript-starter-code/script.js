@@ -67,6 +67,18 @@ function switchPlayer() {
   console.log(`to ${game.currentPlayer}`);
 }
 
+//Hold function that adds the current score to the current players total
+function hold() {
+  game.players[game.currentPlayer].total += game.currentScore; //Add the current score to the current players total
+
+  //TODO: Check if the player has got or exceeded 100 points
+  //If so the game is over and the winner can be displayed
+
+  //If not, switch to the next player, reset the current score to 0
+
+  //We also need to update the scoreUI to display the new scores
+}
+
 //UI Update Functions
 
 //Update to scores to reflect both the current score for the active player, and also the player's total scores
