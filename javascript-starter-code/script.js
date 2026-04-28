@@ -57,14 +57,13 @@ function roll() {
 
 //Will switch the current player to the next player
 function switchPlayer() {
-  console.log(`Player switched from ${game.currentPlayer}`);
   //If the currentPlayer index is 0, change it to 1, else change to 0
   if (game.currentPlayer === 0) {
     game.currentPlayer = 1;
   } else {
     game.currentPlayer = 0;
   }
-  console.log(`to ${game.currentPlayer}`);
+  showActivePlayer();
 }
 
 //Hold function that adds the current score to the current players total
@@ -117,6 +116,16 @@ function updateScoresUI() {
 //Update the dice elements src using the randomNumber we recieve in the roll function
 function updateDiceImage(num) {
   diceElement.src = `../assets/dice-${num}.png`;
+}
+
+function showActivePlayer() {
+  if (game.currentPlayer === 0) {
+    player0Element.classList.add('player--active');
+    player1Element.classList.remove('player--active');
+  } else {
+    player1Element.classList.add('player--active');
+    player0Element.classList.remove('player--active');
+  }
 }
 
 //UI Interaction/Event Listeners
