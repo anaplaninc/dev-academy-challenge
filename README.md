@@ -1,29 +1,7 @@
-# Dice Game Challenge
-Welcome to our challenge to create a 2 player dice game
+Usage: run `python dice_game.py`
 
-## Getting started
-You can find all the rules of the game and what we expect in the [project brief](project-brief.md)
+The game will ask for player names. You can press enter to use default names.
 
-We recommend checking out the branch we have already created for you in the format "firstname-surname". Write your code locally in that branch and then push it to our remote in that same branch. 
-If you need any help with this, please ask.
+On the player's turn, the die will be rolled, if it is a 1 then their turn will end and they will not gain any score. Otherwise, they can press 1 to roll again or 2 to hold.
 
-
-### Dice images
-If you would like to use them, we have provided some images of each dice number in the [assets](assets) folder. You do not have to use these though.
-
-### Starter code for HTML/CSS/Javascript solution
-If you would like to create a solution in HTML, CSS and Javascript we have provided some code to help you get started in the [javascript-starter-code](javascript-starter-code) folder. This will give you a basic UI with all the elements you'll need. You'd just need to add the functionality. You are welcome to amend the HTML and CSS if you wish or use them as is and just add code in Javascript.
-
-### Programming languages
-You are welcome to provide a solution to this challenge in any programming language of your preference. We'd recommend the one you feel most comfortable with.
-
-You may use online documentation and search tools (e.g., Google, Stack Overflow). However, the use of generative AI tools or AI coding assistants (such as ChatGPT, Copilot, Cursor or similar tools) is not permitted during this exercise. 
-
-## Submission
-Please push your changes to your branch on our remote repository. Again, if you need help with this, please do ask.
-
-Tip: We suggest pushing your changes regularly so that we can easily see your thought processes and how you have developed and adjusted the code over time. Remember your commit messages can also really help us with this.
-
-Remember we’re not looking for a perfect or “fancy” solution. We just want to see how you handle this challenge and what you can produce in the time alloted.
-
-If there's anything at all you need help with, please do ask. We don't expect you to know everything.
+The game ends once a player's score reaches the win threshold (100).
