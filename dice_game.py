@@ -29,7 +29,8 @@ class DiceGame:
             return f"{self.current_player} has rolled a 1 and lost their turn score"
         
         self.turn_score += roll_value
-        return f"{self.current_player} rolled a 1 and lost their turn score"
+        self.switch_player()
+        return f"{self.current_player} rolled {roll_value} and their total score is now {self.turn_score} "
     
     def hold_dice(self):
         if self.gameover:
@@ -61,14 +62,17 @@ class DiceGame:
         
         
 game = DiceGame()
-
+print(game.display_scores())
 print(game.roll_dice())
 print(game.hold_dice())
-print(game.hold_dice())
-
 print(game.display_scores())
-
 print(game.roll_dice())
-print(game.hold())
 
-print(game.display_scores())
+# print(game.hold_dice())
+
+# print(game.display_scores())
+
+# print(game.roll_dice())
+# print(game.hold_dice())
+
+# print(game.display_scores())
