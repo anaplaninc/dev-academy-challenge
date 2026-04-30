@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Game {
     Integer score1 = 0;
     Integer score2 = 0;
@@ -19,11 +21,31 @@ public class Game {
         // Run game allowing each user to roll. Add input functionality.
         while(game.score1 < 100 || game.score2 < 100){
             Integer rollScore = game.takeTurn(dice, p1);
-            game.bank(p1, rollScore);
+            System.out.println("Would you like to roll again?");
+            Scanner userRollChecker1 = new Scanner(System.in);
+            String rollAgain = userRollChecker1.nextLine();
+            
+            if(rollAgain == "y"){
+                game.takeTurn(dice, p1);
+                game.bank(p1, rollScore);
+            } else {
+                game.bank(p1, rollScore);
+            }
+            System.out.println("Would you like to roll again?");
+            Scanner userRollChecker2 = new Scanner(System.in);
+            rollAgain = userRollChecker2.nextLine();
+            
             rollScore = game.takeTurn(dice, p2);
             game.bank(p2, rollScore);
+            if(rollAgain == "y"){
+                game.takeTurn(dice, p2);
+                game.bank(p2, rollScore);
+            } else {
+                game.bank(p2, rollScore);
+            }
             game.displayGameState();
         }
+        game.displayGameState();
     }
 
     // Add turn score to total player score

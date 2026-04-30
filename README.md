@@ -30,3 +30,5 @@ If there's anything at all you need help with, please do ask. We don't expect yo
 
 
 # Code explanation
+
+There are 3 classes. Player, Dice and Game. Game controls and stores the main game functionality using Dice to roll etc. Each player is created with a name and number. Each player then rolls a number, that gets added to the total score and then this repeats with the next player. Future functionality is to add turn switching and the option to either bank or roll again.

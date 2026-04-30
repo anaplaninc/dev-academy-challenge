@@ -3,6 +3,7 @@ import java.util.*;
 public class Player{
 
     String name;
+    Integer playerNumber;
     Integer turnScore = 0;
     Integer totalScore = 0;
     List<String> presetNames = new ArrayList<String>(Arrays.asList("Player 1", "Player 2"));
@@ -15,8 +16,9 @@ public class Player{
         name = presetNames.get(playerNumber-1);
     }
 
-    public Player(String name){
+    public Player(String name, Integer number){
         this.name = name;
+        this.playerNumber = number;
     }
 
     public void bank(Integer heldScore){
