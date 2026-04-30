@@ -27,3 +27,6 @@ Tip: We suggest pushing your changes regularly so that we can easily see your th
 Remember we’re not looking for a perfect or “fancy” solution. We just want to see how you handle this challenge and what you can produce in the time alloted.
 
 If there's anything at all you need help with, please do ask. We don't expect you to know everything.
+
+
+# Code explanation
